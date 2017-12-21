@@ -8,15 +8,13 @@ body {
 	font-family: 'Frijole', cursive;
 }
 
-#question-box {
-	margin: 70px;
-	height: 300px;
-	
+
+.card {
+	margin: 100px;
 	background-color: #669999;
 	font-family:'Audiowide', cursive;
+	
+
 }
 
-.card-text {
-	font-size: 32px; 
-}
 
