@@ -1,6 +1,6 @@
  //Variables
 
-var position = 0; 
+ 
 var correct= 0; 
 var incorrect=0;
 
@@ -41,10 +41,10 @@ function generateQuestion() {
 
 //Check Answers////////////////////////////////////////////////////////////////////////////////////
 var y = 0;
+
 function checkAnswer() {
 
-	//var answer = trivia[position][3];
- 
+	
 	//check user input for right or wrong answer
 	
 	var userInput = document.getElementById("red").checked;
@@ -60,6 +60,7 @@ function checkAnswer() {
 	}
 		else{
 			 clearInterval(intervalId);
+			 $("#quest-timer").html("<h3>" + "Incorrect: the correct answer is "+ trivia[y][3] + "</h3>");
 			
         
 		}
@@ -77,7 +78,6 @@ function checkAnswer() {
 
 //Timed question will be 25 seconds per question
 
-
 var number = 25; 
 
 //This variable will hold interval ID 
@@ -92,7 +92,7 @@ run();
 function decrement () {
 //decrease the number by 1 
 	number--; 
-	console.log(number);
+	
 //show the number in quest-timer tag
 	$("#quest-timer").html("<h3>" + number + "</h3>");
 
@@ -104,7 +104,8 @@ function decrement () {
 		stop(); 
 
 	//alert...change to restart to start new question and restart timer
- $("#quest-timer").html("<h3>" + "Time Up" + "</h3>");
+ $("#quest-timer").html("<h3>" + "Times Up: the correct answer is "+ trivia[y][3]  + "</h3>");
+ 		y++;
 	} 
 }
 
